@@ -1,6 +1,6 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { Sora } from '@next/font/google';
 import { Analytics } from '@vercel/analytics/react';
-import { Sora } from '@next/font/google'
 import type { AppProps } from 'next/app';
 import React from 'react';
 import { Provider } from 'react-redux';
