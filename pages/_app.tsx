@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { Sora } from '@next/font/google';
+import { Inter } from '@next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 import React from 'react';
@@ -10,8 +10,8 @@ import { theme } from '../components/theme';
 import { persistor, store } from "../store/store";
 import '../styles/globals.css';
 
-const sora = Sora({
-  weight: ['400', '500', '600', '700'],
+const inter = Inter({
+  weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
 })
 
@@ -20,7 +20,7 @@ function App({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ChakraProvider theme={theme}>
-          <main className={sora.className}>
+          <main className={inter.className}>
             <Layout>
               <Component {...pageProps} />
             </Layout>
