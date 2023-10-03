@@ -1,23 +1,18 @@
-import { Flex } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import Hero from "../Hero/Hero";
+import { Hero } from "../Hero/Hero";
 import JobCard from "../JobCard/JobCard";
-import SearchBar from "../Searchbar/SearchBar";
-import Sidebar from "../Sidebar/Sidebar";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
       <Hero />
-      <Flex>
-        <Sidebar />
-        <Flex flexDirection="column">
-          <SearchBar />
-          <JobCard />
-          {children}
-        </Flex>
-      </Flex>
+      <Heading size="lg" color="gray.600" textAlign={"center"} py={8}>🌟 Vagas recentes</Heading>
+      <JobCard />
+      <Footer />
+
     </>
   );
 }
