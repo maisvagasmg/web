@@ -1,5 +1,4 @@
 import { extendTheme } from '@chakra-ui/react';
-import { StepsStyleConfig as Steps } from "chakra-ui-steps";
 
 const colors = {
   primary: {
@@ -23,7 +22,6 @@ const activeLabelStyles = {
 export const theme = extendTheme({
   colors,
   components: {
-    Steps,
     Form: {
       variants: {
         floating: {

@@ -15,7 +15,7 @@ export const PageTitle = ({ children, excludePrefix = false }: PageTitleProps) =
   if (!loaded) {
     return null;
   }
-  const title = excludePrefix ? children : `${children} - Imóveis Santa Teresa`;
+  const title = excludePrefix ? children : `${children} - Mais Vagas ES`;
   return (
     <Head>
       <title>{title}</title>

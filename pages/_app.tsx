@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { Inter } from '@next/font/google';
+import { Inter, Epilogue } from '@next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 import React from 'react';
@@ -11,6 +11,11 @@ import { persistor, store } from "../store/store";
 import '../styles/globals.css';
 
 const inter = Inter({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+})
+
+const epilogue = Epilogue({
   weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
 })

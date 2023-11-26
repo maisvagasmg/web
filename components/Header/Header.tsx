@@ -253,7 +253,11 @@ const NAV_ITEMS: Array<NavItem> = [
     },
     {
         label: 'Empresas',
-        href: '#',
+        href: 'empresas',
+    },
+    {
+        label: 'Cargos',
+        href: 'cargos',
     },
     {
         label: 'Blog',

@@ -16,7 +16,7 @@ const JobCard: React.FC<JobCardProps> = ({ logo, title, company, jobType, city }
                 <Flex px={{ base: 2, md: 8 }} w='6xl' justifyContent="center" mt={4} direction={{ base: 'column', md: 'row' }}  >
                     <Card height="full" variant="outline" boxShadow="sm" minW={{ base: 'none', md: 'sm' }} maxW="sm" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" data-renderer="Card">
                         <Flex w="full">
-                            <Image minH="full" src={logo} boxSize={24} borderTopLeftRadius={8} borderBottomLeftRadius={8} />
+                            <Image justifyContent={"center"} minH="full" src={logo} boxSize={24} borderTopLeftRadius={8} borderBottomLeftRadius={8} />
                             <Flex direction="column" px={4} py={4} justifyContent="center">
                                 <Text fontSize="14px" fontWeight="semibold">{title}</Text>
                                 <Text fontSize="12px" color="gray.600">{company}</Text>
