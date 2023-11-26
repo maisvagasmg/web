@@ -1,7 +1,6 @@
-import { Card, CardBody, Flex, HStack, Icon, Image, SimpleGrid, Text, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, useDisclosure, Input, Checkbox, Button, FormControl, FormHelperText, FormLabel, Center } from '@chakra-ui/react';
-import { Briefcase, Clock, CurrencyCircleDollar, ReadCvLogo } from "@phosphor-icons/react";
+import { Button, Center, Checkbox, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Input, Text, useDisclosure } from '@chakra-ui/react';
+import { ReadCvLogo } from "@phosphor-icons/react";
 import { ReactNode } from 'react';
-import { UploadButton } from './UploadButtonMail';
 
 
 export const SendCVMail = ({ children }: { children: ReactNode }) => {
