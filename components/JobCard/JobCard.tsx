@@ -1,4 +1,4 @@
-import { Badge, Box, Card, Flex, Grid, Image, Text } from '@chakra-ui/react';
+import { Badge, Box, Card, Flex, Grid, Image, Text, SimpleGrid } from '@chakra-ui/react';
 import React from 'react';
 
 interface JobCardProps {
@@ -13,17 +13,21 @@ const JobCard: React.FC<JobCardProps> = ({ logo, title, company, jobType, city }
     return (
         <>
             <Flex w="full" justifyContent="center" >
-                <Flex px={{ base: 2, md: 8 }} w='6xl' justifyContent="center" mt={4} direction={{ base: 'column', md: 'row' }}  >
-                    <Card height="full" variant="outline" boxShadow="sm" minW={{ base: 'none', md: 'sm' }} maxW="sm" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" data-renderer="Card">
+                <Flex px={{ base: 2, md: 8 }} w='6xl' justifyContent="center" direction={{ base: 'column', md: 'row' }} >
+                    <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden">
                         <Flex w="full">
-                            <Image justifyContent={"center"} minH="full" src={logo} boxSize={24} borderTopLeftRadius={8} borderBottomLeftRadius={8} />
-                            <Flex direction="column" px={4} py={4} justifyContent="center">
-                                <Text fontSize="14px" fontWeight="semibold">{title}</Text>
-                                <Text fontSize="12px" color="gray.600">{company}</Text>
-                                <Grid templateColumns="1fr min-content" columnGap={2} alignItems="center">
-                                    <Text fontSize="xs" color="gray.500" textAlign="left">{city}</Text>
-                                    <Badge colorScheme="blue" size="xs" textAlign="right">{jobType}</Badge>
-                                </Grid>
+                            <Image justifyContent={"center"} minH="full" src={logo} boxSize={28} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
+                            <Flex direction="column" px={4} py={4} justifyContent="space-between" w="full">
+                                <Text minH={11} fontWeight={'semibold'} fontSize='sm' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{title}</Text>
+                                <Flex direction="column" w="full">
+                                    <Text fontSize="12px" color="gray.600">{company}</Text>
+                                    <Grid templateColumns="1fr min-content" columnGap={2} alignItems="center" w="full">
+                                        <Text fontSize="xs" color="gray.500" textAlign="left">{city}</Text>
+                                        <Badge colorScheme="blue" size="xs" textAlign="right">{jobType}</Badge>
+                                    </Grid>
+                                </Flex>
+
+
                             </Flex>
                         </Flex>
                     </Card>
@@ -38,7 +42,7 @@ const App = () => {
     const jobData = [
         {
             logo: "https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2022/01/Timenow.png",
-            title: "Pessoa Analista de Remuneração",
+            title: "Pessoa Analista de Remuneração - Recrutamento e Seleção",
             company: "Timenow",
             jobType: "Efetivo",
             city: "Vitória"
@@ -67,7 +71,7 @@ const App = () => {
     ];
 
     return (
-        <Box>
+        <SimpleGrid columns={[1, 1, 2]} spacing={4} maxW="7xl" mx="auto" py={8}>
             {jobData.map((job, index) => (
                 <JobCard
                     key={index}
@@ -78,7 +82,7 @@ const App = () => {
                     city={job.city}
                 />
             ))}
-        </Box>
+        </SimpleGrid>
     );
 };
 

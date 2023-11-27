@@ -1,15 +1,18 @@
-import { Button, Center, Checkbox, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Input, Text, useDisclosure } from '@chakra-ui/react';
+import { Button, Center, Checkbox, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Input, Text, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
 import { ReadCvLogo } from "@phosphor-icons/react";
 import { ReactNode } from 'react';
-
+import { UploadButton } from './UploadButton';
 
 export const SendCVMail = ({ children }: { children: ReactNode }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const DrawerPosition = useBreakpointValue({ base: 'bottom', md: 'bottom', lg: 'right' })
 
     return (
         <>
             <Flex onClick={onOpen} w="full"  >{children}</Flex>
-            <Drawer isOpen={isOpen} onClose={onClose} placement='bottom' >
+            <Drawer isOpen={isOpen} onClose={onClose}
+                //@ts-ignore
+                placement={DrawerPosition} size={['md', 'md', 'lg']}>
                 <DrawerOverlay>
                     <DrawerContent>
                         <DrawerCloseButton />
@@ -19,25 +22,10 @@ export const SendCVMail = ({ children }: { children: ReactNode }) => {
                                     <Icon boxSize={6} color='gray.500' as={ReadCvLogo} />
                                     <Text fontSize="2xl" color="gray.600" justifyContent={"center"} fontWeight={"bold"}>Envie seu currículo</Text>
                                 </HStack >
-                                <Text fontSize="md" color="gray.500" textAlign={"center"}  >Preencha as informações abaixo e selecione seu currículo para confirmar sua candidatura.</Text>
-
-                                {/* <FormControl>
-                                    <FormLabel>Nome completo</FormLabel>
-                                    <Input type='text' placeholder='João da Silva Sauro' />
-                                </FormControl>
-
-                                <FormControl>
-                                    <FormLabel>WhatsApp com DDD</FormLabel>
-                                    <Input placeholder='(27) 99999-9999' type='tel' />
-                                </FormControl>
-
-                                <FormControl>
-                                    <FormLabel>E-mail</FormLabel>
-                                    <Input placeholder='joaodasilva@gmail.com' type='email' />
-                                </FormControl> */}
-                                <Input type='text' placeholder='Nome completo' />
+                                <Text fontSize="md" color="gray.500" textAlign={"center"}  >Preencha as informações abaixo e selecione seu currículo para confirmar sua candidatura.</Text>                                <Input type='text' placeholder='Nome completo' />
                                 <Input placeholder='WhatsaApp com DDD' type='tel' />
                                 <Input placeholder='E-mail' type='email' />
+                                <UploadButton setFiles={null} xfiles={[]} />
                             </Flex>
                             <Center>
                                 <Image minH="full" src="https://i.imgur.com/wPNfC7i.png" ></Image>

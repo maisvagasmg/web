@@ -6,30 +6,30 @@ export default function JobInfo() {
         <>
             <Flex w="full" justifyContent="center"  >
                 <Flex w='full' justifyContent="center" direction={{ base: 'column', md: 'row' }}  >
-                    <Card height="full" variant="outline" boxShadow="sm"  >
-                        <CardBody >
-                            <Flex direction="column">
-                                <SimpleGrid columns={2}>
-                                    <Flex justifyContent={'center'} gap={1} flexWrap={'wrap'} direction={'column'}>
-                                        <HStack alignItems="center" gridGap="4px">
-                                            <Icon boxSize={6} color='green.500' as={Briefcase} />
-                                            <Text fontWeight={'bold'}> Tipo </Text>
-                                        </HStack>
-                                        <HStack alignItems="center" gridGap="4px">
-                                            <Icon boxSize={6} color='purple.500' as={CurrencyCircleDollar} />
-                                            <Text fontWeight={'bold'}>Salário</Text>
-                                        </HStack>
-                                        <HStack alignItems="center" gridGap="4px">
-                                            <Icon boxSize={6} color='red.500' as={Clock} />
-                                            <Text fontWeight={'bold'}>Publicado</Text>
-                                        </HStack>
-                                    </Flex>
-                                    <Flex direction="column" gap={1} textAlign={'right'}>
-                                        <Text >Efetivo</Text>
-                                        <Text >R$ 3.600,00</Text>
-                                        <Text >21 de Outubro</Text>
-                                    </Flex>
-                                </SimpleGrid>
+                    <Card height="full" variant="outline" boxShadow="sm" w="full" >
+                        <CardBody justifyContent="space-between" display="flex" flexDirection="column" gap={2}>
+                            <Flex justifyContent="space-between" >
+                                <Flex align="center" gap={1}>
+                                    <Icon boxSize={6} color='green.500' as={Briefcase} />
+                                    <Text fontWeight={'bold'}> Tipo </Text>
+                                </Flex>
+                                <Text >Efetivo</Text>
+                            </Flex>
+
+                            <Flex justifyContent="space-between" >
+                                <Flex align="center" gap={1}>
+                                    <Icon boxSize={6} color='blue.500' as={CurrencyCircleDollar} />
+                                    <Text fontWeight={'bold'}>Salário</Text>
+                                </Flex>
+                                <Text >R$ 3.600,00</Text>
+                            </Flex>
+
+                            <Flex justifyContent="space-between" >
+                                <Flex align="center" gap={1}>
+                                    <Icon boxSize={6} color='red.500' as={Clock} />
+                                    <Text fontWeight={'bold'}>Publicado</Text>
+                                </Flex>
+                                <Text >21 de Outubro</Text>
                             </Flex>
                         </CardBody>
                     </Card>

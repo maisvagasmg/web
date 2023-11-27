@@ -13,8 +13,8 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export default function Footer() {
     return (
         <>
-            <Flex direction="column" px="8" w="full" alignItems="center" bg="gray.100" mt={["8", "16"]} >
-                <Flex w="full" maxW="8xl" py={10} px={["2", "8"]} >
+            <Flex direction="column" px="8" w="full" alignItems="center" bg="gray.100" mt={8} >
+                <Flex w="full" maxW="7xl" py={10} px={["2", "4"]} >
                     <SimpleGrid w='full'
                         templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
                         spacing={8}>
@@ -53,9 +53,9 @@ export default function Footer() {
                     </SimpleGrid>
                 </Flex>
             </Flex>
-            <Flex mb={[24, 0]} direction="column" px="8" py="4" w="full" alignItems="center" bg="blue.100">
-                <Flex w="full" justifyContent="center" maxW="8xl" >
-                    <Text fontSize="10px" textAlign="justify" color="blue.600">
+            <Flex mb={[24, 0]} direction="column" px="4" py="4" w="full" alignItems="center" bg="blue.100"  >
+                <Flex w="full" justifyContent="center" maxW="7xl" >
+                    <Text fontSize="10px" px="4" textAlign="justify" color="blue.600">
                         O Mais Vagas ES é uma plataforma capixaba que reúne diariamente as melhores vagas de emprego em todo o Espírito Santo. Fique por dentro das últimas vagas de emprego ofertadas e encontre facilmente as melhores oportunidades na sua região. Como um dos principais sites de busca de emprego do estado, somos a sua fonte confiável para visualizar as vagas mais recentes nas empresas, proporcionando uma vantagem exclusiva por possuímos diversas parcerias com empresas.
                     </Text>
                 </Flex>

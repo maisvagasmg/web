@@ -2,37 +2,31 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
+      "ES5",
+      "ES2015",
+      "ES2016",
+      "ES2015.Promise",
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "components/TitleComponent/TitleComponent.jsx",
-    "components/Drawers/DrawerCodigoConfirmacao.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

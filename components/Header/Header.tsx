@@ -11,16 +11,21 @@ export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure()
 
     return (
-        <Box>
+        <Flex
+            alignItems={['start', 'start', 'center']}
+            direction="column"
+            borderBottom={1}
+            borderStyle={'solid'}
+            borderColor={useColorModeValue('gray.200', 'gray.900')}>
             <Flex
+                w="full"
+                maxW="7xl"
                 bg={useColorModeValue('white', 'gray.800')}
                 color={useColorModeValue('gray.600', 'white')}
                 minH={'72px'}
                 py={{ base: 2 }}
                 px={{ base: 4 }}
-                borderBottom={1}
-                borderStyle={'solid'}
-                borderColor={useColorModeValue('gray.200', 'gray.900')}
+
                 align={'center'}>
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
@@ -33,7 +38,7 @@ export default function WithSubnavigation() {
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
-                <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+                <Flex alignItems="center" flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
                     <Logo />
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                         <DesktopNav />
@@ -64,7 +69,7 @@ export default function WithSubnavigation() {
             <Collapse in={isOpen} animateOpacity>
                 <MobileNav />
             </Collapse>
-        </Box>
+        </Flex>
     )
 }
 
@@ -249,7 +254,7 @@ const NAV_ITEMS: Array<NavItem> = [
     // },
     {
         label: 'Todas as vagas',
-        href: '#',
+        href: 'vagas',
     },
     {
         label: 'Empresas',

@@ -1,15 +1,19 @@
-import { Center, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Text, useDisclosure } from '@chakra-ui/react';
+import { Center, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Text, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
 import { ArrowSquareOut } from "@phosphor-icons/react";
 import { ReactNode } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 export const SendCVLink = ({ children }: { children: ReactNode }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const DrawerPosition = useBreakpointValue({ base: 'bottom', md: 'bottom', lg: 'right' })
+
 
     return (
         <>
             <Flex onClick={onOpen} w="full"  >{children}</Flex>
-            <Drawer isOpen={isOpen} onClose={onClose} placement='bottom' >
+            <Drawer isOpen={isOpen} onClose={onClose}
+                //@ts-ignore
+                placement={DrawerPosition} size={['md', 'md', 'lg']}>
                 <DrawerOverlay>
                     <DrawerContent>
                         <DrawerCloseButton />

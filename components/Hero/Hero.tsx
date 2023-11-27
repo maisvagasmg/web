@@ -15,7 +15,7 @@ export const Hero = () => {
             </Flex > */}
 
             <Flex w="full" bg="blue.50" justifyContent="center" alignItems="center" >
-                <Flex p={8} align={'center'} justifyContent={'start'} bg='blue.50' w='full' maxW="6xl">
+                <Flex p={8} align={'center'} justifyContent={'start'} bg='blue.50' w='full' maxW="7xl">
                     <Stack spacing={6} w={'full'} maxW={'lg'}>
                         <Heading fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
                             <Text as={'span'} position={'relative'}
