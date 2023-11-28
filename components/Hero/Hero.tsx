@@ -1,4 +1,4 @@
-import { Flex, Heading, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Heading, Stack, Text, Image, useBreakpointValue } from '@chakra-ui/react';
 
 export const Hero = () => {
     return (
@@ -15,7 +15,7 @@ export const Hero = () => {
             </Flex > */}
 
             <Flex w="full" bg="blue.50" justifyContent="center" alignItems="center" >
-                <Flex p={8} align={'center'} justifyContent={'start'} bg='blue.50' w='full' maxW="7xl">
+                <Flex p={4} align={'center'} justifyContent={'space-between'} bg='blue.50' w='full' maxW="7xl"  >
                     <Stack spacing={6} w={'full'} maxW={'lg'}>
                         <Heading fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
                             <Text as={'span'} position={'relative'}
@@ -36,10 +36,13 @@ export const Hero = () => {
                                 É mais vagas pra você.
                             </Text>{' '}
                         </Heading>
-                        <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
+                        <Text fontSize={{ base: 'sm', lg: 'lg' }} color={'gray.600'}>
                             O jeito mais rápido, fácil e eficaz de você achar seu emprego no ES!
                         </Text>
                     </Stack>
+                    <Flex  >
+                        <Image minH="full" objectFit={"contain"} boxSize={48} src="./assets/job.gif"></Image>
+                    </Flex>
                 </Flex>
             </Flex>
 
