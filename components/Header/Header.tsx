@@ -25,7 +25,6 @@ export default function WithSubnavigation() {
                 minH={'72px'}
                 py={{ base: 2 }}
                 px={{ base: 4 }}
-
                 align={'center'}>
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
@@ -75,7 +74,7 @@ export default function WithSubnavigation() {
 
 const DesktopNav = () => {
     const linkColor = useColorModeValue('gray.600', 'gray.200')
-    const linkHoverColor = useColorModeValue('gray.800', 'white')
+    const linkHoverColor = useColorModeValue('blue.600', 'white')
     const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
     return (
@@ -263,6 +262,10 @@ const NAV_ITEMS: Array<NavItem> = [
     {
         label: 'Cargos',
         href: 'cargos',
+    },
+    {
+        label: 'Cidades',
+        href: 'cidades',
     },
     {
         label: 'Blog',

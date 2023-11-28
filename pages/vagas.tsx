@@ -1,6 +1,5 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import Footer from "../components/Footer/Footer";
-import { Hero } from "../components/Hero/Hero";
 import JobCard from "../components/JobCard/JobCard";
 
 export default function Vagas() {
@@ -9,8 +8,10 @@ export default function Vagas() {
             <Flex w="full" direction="column"  >
                 <Flex direction="column" bg="gray.50" py={4} borderBottomLeftRadius={24} borderBottomRightRadius={24} borderWidth={1} borderColor="gray.200">
                     <Flex direction={'column'} py={4} px={4} justifyContent="center" >
-                        <Flex justifyContent={'center'} >
-                            <Text fontWeight={'bold'} fontSize='xl' color="blue.700">Todas as vagas (322)
+                        <Flex justifyContent={'center'} gap={4} direction={'column'}>
+                            <Text fontWeight={'bold'} fontSize='xl' textAlign={'center'} color="blue.700">Vagas (1269)
+                            </Text>
+                            <Text fontSize={['sm', 'sm', 'md']} textAlign={'center'} color="gray.500">Confira todas as vagas disponiveis no site. As melhores oportunidades estão aqui.
                             </Text>
                         </Flex>
                     </Flex>

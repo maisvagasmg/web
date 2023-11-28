@@ -7,8 +7,10 @@ export default function Companies() {
             <Flex w="full" direction="column"  >
                 <Flex direction="column" bg="gray.50" py={4} borderBottomLeftRadius={24} borderBottomRightRadius={24} borderWidth={1} borderColor="gray.200">
                     <Flex direction={'column'} py={4} px={4} justifyContent="center" >
-                        <Flex justifyContent={'center'} >
-                            <Text fontWeight={'bold'} fontSize='xl' color="blue.700">Empresas (654)
+                        <Flex justifyContent={'center'} gap={4} direction={'column'}>
+                            <Text fontWeight={'bold'} fontSize='xl' textAlign={'center'} color="blue.700">Empresas (689)
+                            </Text>
+                            <Text fontSize={['sm', 'sm', 'md']} textAlign={'center'} color="gray.500">Deseja trabalhar em alguma empresa específica? Escolha uma das empresas abaixo para visualizar todas as vagas em aberto nela.
                             </Text>
                         </Flex>
                     </Flex>

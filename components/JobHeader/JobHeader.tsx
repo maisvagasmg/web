@@ -1,4 +1,4 @@
-import { Button, Flex, Hide, Icon, Image, Show, Text, SimpleGrid } from '@chakra-ui/react';
+import { Button, Flex, Image, Text, SimpleGrid } from '@chakra-ui/react';
 import JobInfo from '../JobInfo/JobInfo';
 import { SendCVMail } from '../SendCV/SendCVMail';
 import { SendCVLink } from '../SendCV/SendCVLink';
