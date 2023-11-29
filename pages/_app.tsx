@@ -10,10 +10,7 @@ import { theme } from '../components/theme';
 import { persistor, store } from "../store/store";
 import '../styles/globals.css';
 
-const inter = Inter({
-  weight: ['400', '500', '600', '700', '800'],
-  subsets: ['latin'],
-})
+
 
 const epilogue = Epilogue({
   weight: ['400', '500', '600', '700', '800'],
@@ -25,7 +22,7 @@ function App({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ChakraProvider theme={theme}>
-          <main className={inter.className}>
+          <main className={epilogue.className}>
             <Layout>
               <Component {...pageProps} />
             </Layout>

@@ -20,3 +20,9 @@ body {
     transform: translate(0, -0px);
   }
 }
+
+@media (max-width: 768px) {
+  .mobile-card:hover {
+    transform: initial;
+  }
+}

@@ -13,8 +13,8 @@ const JobCard: React.FC<JobCardProps> = ({ logo, title, company, jobType, city }
     return (
         <>
             <Flex w="full" justifyContent="center" >
-                <Flex px={{ base: 2, md: 8 }} w='6xl' justifyContent="center" direction={{ base: 'column', md: 'row' }} >
-                    <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }}>
+                <Flex px={{ base: 4, md: 8 }} w='6xl' justifyContent="center" direction={{ base: 'column', md: 'row' }}  >
+                    <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }} className="mobile-card">
                         <Flex w="full">
                             <Image justifyContent={"center"} minH="full" src={logo} boxSize={28} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
                             <Flex direction="column" px={4} py={4} justifyContent="space-between" w="full">

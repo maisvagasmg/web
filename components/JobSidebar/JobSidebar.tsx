@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Text, Grid, Card, CardBody, CardHeader, Divider, Badge, Icon } from '@chakra-ui/react';
+import { Button, Flex, Image, Text, Grid, Card, CardBody, CardHeader, Divider, Badge, Box, Icon } from '@chakra-ui/react';
 import { SendCVMail } from '../SendCV/SendCVMail';
 import { SendCVLink } from '../SendCV/SendCVLink';
 import { SendCVWhatsApp } from '../SendCV/SendCVWhatsApp';
@@ -19,7 +19,7 @@ export default function JobSidebar() {
                         </CardHeader>
                         <Divider w="full"></Divider>
                         <CardBody>
-                            <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }}>
+                            <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }} className="mobile-card">
                                 <Flex w="full">
                                     <Image justifyContent={"center"} minH="full" src="https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2022/01/Timenow.png" boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
                                     <Flex direction="column" px={4} py={2} justifyContent="space-between" w="full">
@@ -29,7 +29,9 @@ export default function JobSidebar() {
                                             <Text fontSize="12px" color="gray.600">Timenow</Text>
                                             <Grid templateColumns="1fr min-content" columnGap={2} alignItems="center" w="full">
                                                 <Text fontSize="xs" color="gray.500" textAlign="left">Vitória</Text>
-                                                <Badge colorScheme="blue" size="xs" textAlign="right">Efetivo</Badge>
+                                                <Box>
+                                                    <Badge colorScheme="blue" size="xs" textAlign="right">Efetivo</Badge>
+                                                </Box>
                                             </Grid>
                                         </Flex>
                                     </Flex>
@@ -45,7 +47,7 @@ export default function JobSidebar() {
                         </CardHeader>
                         <Divider w="full"></Divider>
                         <CardBody>
-                            <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }}>
+                            <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }} className="mobile-card">
                                 <Flex w="full">
                                     <Image justifyContent={"center"} minH="full" src="https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2022/06/Lince-Humanizacao.png" boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
                                     <Flex direction="column" px={4} py={2} justifyContent="space-between" w="full">

@@ -51,11 +51,9 @@ export default function WithSubnavigation() {
                         fontSize={'sm'}
                         fontWeight={600}
                         color={'white'}
-                        bg={'green.400'}
+                        colorScheme="green"
                         href={'#'}
-                        _hover={{
-                            bg: 'pink.300',
-                        }}>
+                    >
                         Grupo de vagas no WhatsApp
                     </Button>
                     <Button

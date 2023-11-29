@@ -23,7 +23,7 @@ export default function Footer() {
                                 <Logo />
                             </Box>
                             <Text fontSize={'sm'}>
-                                © 2023 Ofertas ES. Todos os direitos reservados.
+                                © 2023 Mais Vagas ES. Todos os direitos reservados.
                             </Text>
                         </Stack>
                         <Stack align={'flex-start'}>
@@ -33,7 +33,7 @@ export default function Footer() {
                             <Link style={{ textDecoration: 'none' }} href={'#'}>O que fazemos?</Link>
                         </Stack>
                         <Stack align={'flex-start'}>
-                            <ListHeader>Ofertas ES</ListHeader>
+                            <ListHeader>Mais Vagas ES</ListHeader>
                             <Link style={{ textDecoration: 'none' }} href={'#'}>Sobre</Link>
                             <Link style={{ textDecoration: 'none' }} href={'#'}>Contato</Link>
                             <Link style={{ textDecoration: 'none' }} href={'#'}>Parceria</Link>
