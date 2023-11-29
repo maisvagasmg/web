@@ -1,11 +1,7 @@
-import {
-    ChevronDownIcon,
-    ChevronRightIcon, CloseIcon, HamburgerIcon
-} from '@chakra-ui/icons';
-import {
-    Box, Button, Collapse, Flex, Icon, IconButton, Popover, PopoverContent, PopoverTrigger, Stack, Text, useColorModeValue, useDisclosure
-} from '@chakra-ui/react';
+import { ChevronDownIcon, ChevronRightIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { Box, Button, Collapse, Flex, Icon, IconButton, Popover, PopoverContent, PopoverTrigger, Stack, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { Logo } from "../Logo/Logo";
+import { WhatsappLogo } from '@phosphor-icons/react';
 
 export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure()
@@ -49,6 +45,19 @@ export default function WithSubnavigation() {
                     justify={'flex-end'}
                     direction={'row'}
                     spacing={6}>
+                    <Button
+                        as={'a'}
+                        display={{ base: 'none', md: 'inline-flex' }}
+                        fontSize={'sm'}
+                        fontWeight={600}
+                        color={'white'}
+                        bg={'green.400'}
+                        href={'#'}
+                        _hover={{
+                            bg: 'pink.300',
+                        }}>
+                        Grupo de vagas no WhatsApp
+                    </Button>
                     <Button
                         as={'a'}
                         display={{ base: 'none', md: 'inline-flex' }}

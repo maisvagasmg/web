@@ -1,4 +1,4 @@
-import { Card, CardBody, Flex, HStack, Icon, SimpleGrid, Text } from '@chakra-ui/react';
+import { Badge, Card, CardBody, Flex, Icon, Text } from '@chakra-ui/react';
 import { Briefcase, Clock, CurrencyCircleDollar } from "@phosphor-icons/react";
 
 export default function JobInfo() {
@@ -13,7 +13,7 @@ export default function JobInfo() {
                                     <Icon boxSize={6} color='green.500' as={Briefcase} />
                                     <Text fontWeight={'bold'}> Tipo </Text>
                                 </Flex>
-                                <Text >Efetivo</Text>
+                                <Badge variant='subtle' colorScheme="green" >Efetivo</Badge>
                             </Flex>
 
                             <Flex justifyContent="space-between" >
