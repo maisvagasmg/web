@@ -10,8 +10,6 @@ import { theme } from '../components/theme';
 import { persistor, store } from "../store/store";
 import '../styles/globals.css';
 
-
-
 const epilogue = Epilogue({
   weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],

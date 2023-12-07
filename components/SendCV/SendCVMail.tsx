@@ -1,15 +1,14 @@
 import { Button, Center, Checkbox, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Input, Text, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
 import { ReadCvLogo } from "@phosphor-icons/react";
-import { ReactNode } from 'react';
 import { UploadButton } from './UploadButton';
 
-export const SendCVMail = ({ children }: { children: ReactNode }) => {
+export const SendCVMail = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const DrawerPosition = useBreakpointValue({ base: 'bottom', md: 'bottom', lg: 'right' })
 
     return (
         <>
-            <Flex onClick={onOpen} w="full"  >{children}</Flex>
+            <Flex onClick={onOpen} w="full" ><Button colorScheme="green" w="full">Me candidatar a essa vaga</Button></Flex>
             <Drawer isOpen={isOpen} onClose={onClose}
                 //@ts-ignore
                 placement={DrawerPosition} size={['md', 'md', 'lg']}>

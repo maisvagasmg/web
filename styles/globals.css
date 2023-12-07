@@ -26,3 +26,8 @@ body {
     transform: initial;
   }
 }
+
+.description p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

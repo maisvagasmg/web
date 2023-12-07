@@ -1,16 +1,15 @@
-import { Center, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Text, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
+import { Button, Center, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, Flex, HStack, Icon, Image, Text, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
 import { ArrowSquareOut } from "@phosphor-icons/react";
-import { ReactNode } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
-export const SendCVLink = ({ children }: { children: ReactNode }) => {
+export const SendCVLink = ({ link }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const DrawerPosition = useBreakpointValue({ base: 'bottom', md: 'bottom', lg: 'right' })
 
 
     return (
         <>
-            <Flex onClick={onOpen} w="full"  >{children}</Flex>
+            <Flex onClick={onOpen} w="full"  ><Button colorScheme="green" w="full">Me candidatar a essa vaga</Button></Flex>
             <Drawer isOpen={isOpen} onClose={onClose}
                 //@ts-ignore
                 placement={DrawerPosition} size={['md', 'md', 'lg']}>
@@ -35,7 +34,7 @@ export const SendCVLink = ({ children }: { children: ReactNode }) => {
                                         colorsTime={[11, 6, 0]}
                                         isSmoothColorTransition={true}
                                         onComplete={() => {
-                                            window.location.href = 'https://maisvagases.com.br/inscricao';
+                                            window.location.href = link;
                                         }}
                                     >
                                         {({ remainingTime }) => remainingTime}
