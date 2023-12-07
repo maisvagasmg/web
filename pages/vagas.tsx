@@ -1,8 +1,25 @@
 import { Flex, Text } from "@chakra-ui/react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import JobCard from "../components/JobCard/JobCard";
 
 export default function Vagas() {
+    const [load, setLoad] = useState<boolean>(true)
+    const [vaga, setVaga] = useState<any[]>([])
+
+    async function loadJobs() {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Vagas/?fields=slug,cargos,company.Empresa,Contract,cidade.Cidades_id.cidade,company.Logo.filename_disk`)
+        //@ts-ignore
+        setVaga(response?.data?.data)
+    }
+
+    useEffect(() => {
+        if (load) {
+            loadJobs()
+        }
+    }, [load])
+
     return (
         <>
             <Flex w="full" direction="column"  >
@@ -18,7 +35,7 @@ export default function Vagas() {
                 </Flex>
             </Flex>
 
-            <JobCard />
+            <JobCard jobData={vaga} />
             <Footer />
         </>
     );
