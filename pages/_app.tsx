@@ -9,6 +9,7 @@ import { Layout } from '../components/Layout/Layout';
 import { theme } from '../components/theme';
 import { persistor, store } from "../store/store";
 import '../styles/globals.css';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const epilogue = Epilogue({
   weight: ['400', '500', '600', '700', '800'],
@@ -22,6 +23,7 @@ function App({ Component, pageProps }: AppProps) {
         <ChakraProvider theme={theme}>
           <main className={epilogue.className}>
             <Layout>
+              <SpeedInsights />
               <Component {...pageProps} />
             </Layout>
           </main>
