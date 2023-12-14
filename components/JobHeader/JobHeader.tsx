@@ -75,7 +75,7 @@ export default function Jobheader({ data }) {
                             </Card>
                         </GridItem>
                         <GridItem w='100%' colSpan={[3, 3, 1]}>
-                            <JobSidebar cargo={data?.cargos} />
+                            <JobSidebar />
                         </GridItem>
                     </Grid>
                 </Flex>
