@@ -93,7 +93,7 @@ const DesktopNav = () => {
                             <Box
                                 as="a"
                                 p={2}
-                                href={navItem.href ?? '#'}
+                                href={`${window.location.origin}/${navItem.href ?? '#'}`}
                                 fontSize={'sm'}
                                 fontWeight={500}
                                 color={linkColor}
@@ -122,8 +122,9 @@ const DesktopNav = () => {
                         )}
                     </Popover>
                 </Box>
-            ))}
-        </Stack>
+            ))
+            }
+        </Stack >
     )
 }
 
@@ -180,7 +181,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             <Box
                 py={2}
                 as="a"
-                href={href ?? '#'}
+                href={`${window.location.origin}/${href ?? '#'}`}
                 justifyContent="space-between"
                 alignItems="center"
                 _hover={{

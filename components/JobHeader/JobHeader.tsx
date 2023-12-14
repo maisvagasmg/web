@@ -13,7 +13,7 @@ export default function Jobheader({ data }) {
                     <SimpleGrid columns={[1, 1, 2]} spacing={[4, 4, 8]} maxW="7xl" mx="auto" px={[0, 0, 4]} w="full">
                         <Flex direction={'column'}  >
                             <Flex gap={4} mb={[4, 4, 0]} >
-                                <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.company?.Logo?.filename_disk}`} />
+                                <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.company?.Logo?.filename_disk}format=webp&quality=75`} />
                                 <Flex direction={'column'} justifyContent={'space-between'}>
                                     <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.cargos}</Text>
                                     <Flex direction={'column'}>
@@ -68,18 +68,16 @@ export default function Jobheader({ data }) {
                                 </CardBody>
                                 <Divider w="full"></Divider>
                                 <CardFooter>
-                                    {data?.candidatura == "link" && <SendCVLink link={data?.url} />}
+                                    {data?.candidatura == "link" && <SendCVLink link={data?.url} inscricoes={data?.inscricoes} id={data?.id} />}
                                     {data?.candidatura == "mail" && <SendCVMail />}
-                                    {data?.candidatura == "whatsapp" && <SendCVWhatsApp whatsapp={data?.whatsapp?.whatsapp} cargo={data?.cargos} inscricoes={data?.inscricoes} />}
+                                    {data?.candidatura == "whatsapp" && <SendCVWhatsApp whatsapp={data?.whatsapp?.whatsapp} cargo={data?.cargos} inscricoes={data?.inscricoes} id={data?.id} />}
                                 </CardFooter>
                             </Card>
                         </GridItem>
                         <GridItem w='100%' colSpan={[3, 3, 1]}>
-                            <JobSidebar />
+                            <JobSidebar cargo={data?.cargos} />
                         </GridItem>
                     </Grid>
-                    <Flex direction={'column'} >
-                    </Flex>
                 </Flex>
             </Flex>
         </>

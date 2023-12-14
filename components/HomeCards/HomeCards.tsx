@@ -41,7 +41,7 @@ export default function HomeCards() {
                             <Flex justifyContent="center" gap={4}>
                                 <Flex direction="column">
                                     <Text fontWeight="bold" fontSize="xl" > Vagas por cargo</Text>
-                                    <Text fontSize="sm" > Já sabe o que procura? Confira as vagas pelo seu cargo</Text>
+                                    <Text fontSize="sm" > Já sabe o que procura? Veja as vagas pelo seu cargo</Text>
                                     <Button maxW={40} colorScheme="purple" mt={4} rightIcon={<Icon as={CaretRight} />}>Ver cargos</Button>
                                 </Flex>
                                 <Flex>

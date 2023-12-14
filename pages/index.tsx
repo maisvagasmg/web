@@ -1,5 +1,6 @@
 import HomeCards from "@/components/HomeCards/HomeCards";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Flex, Text, Button, Icon } from "@chakra-ui/react";
+import { ArrowUpRight } from "@phosphor-icons/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
@@ -11,7 +12,7 @@ export default function Index() {
   const [vaga, setVaga] = useState<any[]>([])
 
   async function loadJobs() {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Vagas/?fields=slug,cargos,company.Empresa,Contract,cidade.Cidades_id.cidade,company.Logo.filename_disk`)
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Vagas/?fields=slug,cargos,company.Empresa,Contract,cidade.Cidades_id.cidade,company.Logo.filename_disk,quantidade,pcd&sort=-date_updated`)
     //@ts-ignore
     setVaga(response?.data?.data)
   }
@@ -26,7 +27,15 @@ export default function Index() {
     <>
       <Hero />
       <HomeCards />
-      <Heading size="lg" color="gray.600" textAlign={"center"} py={8}>🌟 Vagas recentes</Heading>
+      <Flex w="full" justifyContent="center">
+        <Flex w="7xl" justifyContent='space-between' alignItems="center" p={6}>
+          <Flex direction="column">
+            <Text fontWeight="bold" fontSize="xl" >Vagas recentes</Text>
+            <Text fontWeight="light" fontSize="sm">39 adicionadas hoje</Text>
+          </Flex>
+          <Button size="sm" variant="outline" rightIcon={<Icon as={ArrowUpRight} />}>Todas as vagas</Button>
+        </Flex>
+      </Flex>
       <JobCard jobData={vaga} />
       <Footer />
     </>

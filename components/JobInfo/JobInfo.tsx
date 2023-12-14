@@ -1,5 +1,5 @@
 import { Badge, Box, Card, CardBody, Flex, Icon, Text } from '@chakra-ui/react';
-import { Briefcase, CalendarBlank, Coins, Gift, Wheelchair } from "@phosphor-icons/react";
+import { Stack, CalendarBlank, Coins, LinkedinLogo, Wheelchair, Briefcase } from "@phosphor-icons/react";
 
 const contractColorSchemes = {
     efetivo: 'green',
@@ -20,7 +20,7 @@ export default function JobInfo({ data }) {
                                 <Flex direction={"column"} gap={2} justifyContent="space-between" w="full">
                                     <Flex justifyContent="space-between" >
                                         <Flex align="center" gap={1}>
-                                            <Icon boxSize={6} color='green.500' as={Briefcase} />
+                                            <Icon boxSize={6} color='green.500' as={Stack} />
                                             <Text fontWeight={'semibold'}> Tipo </Text>
                                         </Flex>
                                         <Box>
@@ -45,7 +45,7 @@ export default function JobInfo({ data }) {
                                         </Text>
                                     </Flex>
 
-                                    <Flex justifyContent="space-between"  >
+                                    <Flex justifyContent="space-between" >
                                         <Flex align="center" gap={1}>
                                             <Icon boxSize={6} color='red.500' as={CalendarBlank} />
                                             <Text fontWeight={'semibold'}>Publicado</Text>
@@ -61,7 +61,7 @@ export default function JobInfo({ data }) {
                                 <Flex direction={"column"} gap={2} w="full">
                                     <Flex justifyContent="space-between" >
                                         <Flex align="center" gap={1}>
-                                            <Icon boxSize={6} color='purple.500' as={Gift} />
+                                            <Icon boxSize={6} color='purple.500' as={Briefcase} />
                                             <Text fontWeight={'semibold'}>Quantidade</Text>
                                         </Flex>
                                         <Text >{data?.quantidade ? data?.quantidade.toString().padStart(2, '0') : '01'}</Text>
@@ -80,6 +80,16 @@ export default function JobInfo({ data }) {
                                                     : data?.pcd && data?.pcd.charAt(0).toUpperCase() + data?.pcd.slice(1)}
                                         </Text>
                                     </Flex>
+
+                                    {data?.url?.includes("https://www.linkedin.com/jobs/view/") && (
+                                        <Flex justifyContent="space-between">
+                                            <Flex align="center" gap={1}>
+                                                <Icon boxSize={6} color='blue.500' as={LinkedinLogo} />
+                                                <Text fontWeight={'semibold'}>Candidatura</Text>
+                                            </Flex>
+                                            <Text>via LinkedIn</Text>
+                                        </Flex>
+                                    )}
                                 </Flex>
                             </Flex>
                         </CardBody>
