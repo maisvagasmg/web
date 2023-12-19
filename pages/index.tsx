@@ -8,6 +8,8 @@ import { Hero } from "../components/Hero/Hero";
 import JobCard from "../components/JobCard/JobCard";
 
 export default function Index() {
+  <link rel="icon" href="/favicon.ico" />
+
   const [load, setLoad] = useState<boolean>(true)
   const [vaga, setVaga] = useState<any[]>([])
 
@@ -31,9 +33,9 @@ export default function Index() {
         <Flex w="7xl" justifyContent='space-between' alignItems="center" p={6}>
           <Flex direction="column">
             <Text fontWeight="bold" fontSize="xl" >Vagas recentes</Text>
-            <Text fontWeight="light" fontSize="sm">39 adicionadas hoje</Text>
+            {/* <Text fontWeight="light" fontSize="sm">39 adicionadas hoje</Text> */}
           </Flex>
-          <Button size="sm" variant="outline" rightIcon={<Icon as={ArrowUpRight} />}>Todas as vagas</Button>
+          {/* <Button size="sm" variant="outline" rightIcon={<Icon as={ArrowUpRight} />}>Todas as vagas</Button> */}
         </Flex>
       </Flex>
       <JobCard jobData={vaga} />
