@@ -23,7 +23,7 @@ export default function Footer() {
                                 <Logo />
                             </Box>
                             <Text fontSize={'sm'}>
-                                © 2023 Mais Vagas ES. Todos os direitos reservados.
+                                © 2023 Mais Vagas MG. Todos os direitos reservados.
                             </Text>
                         </Stack>
                         <Stack align={'flex-start'}>
@@ -33,7 +33,7 @@ export default function Footer() {
                             <Link style={{ textDecoration: 'none' }} href={'#'}>O que fazemos?</Link>
                         </Stack>
                         <Stack align={'flex-start'}>
-                            <ListHeader>Mais Vagas ES</ListHeader>
+                            <ListHeader>Mais Vagas MG</ListHeader>
                             <Link style={{ textDecoration: 'none' }} href={'#'}>Sobre</Link>
                             <Link style={{ textDecoration: 'none' }} href={'#'}>Contato</Link>
                             <Link style={{ textDecoration: 'none' }} href={'#'}>Parceria</Link>
@@ -46,9 +46,9 @@ export default function Footer() {
                         </Stack>
                         <Stack align={'flex-start'}>
                             <ListHeader>Siga-nos</ListHeader>
-                            <Link style={{ textDecoration: 'none' }} href={'https://facebook.com/maisvagases'}>Facebook</Link>
-                            <Link style={{ textDecoration: 'none' }} href={'https://t.me/maisvagases'}>Telegram</Link>
-                            <Link style={{ textDecoration: 'none' }} href={'https://instagram.com/maisvagases'}>Instagram</Link>
+                            <Link style={{ textDecoration: 'none' }} href={'https://facebook.com/maisvagasmg'}>Facebook</Link>
+                            <Link style={{ textDecoration: 'none' }} href={'https://t.me/maisvagasmg'}>Telegram</Link>
+                            <Link style={{ textDecoration: 'none' }} href={'https://instagram.com/maisvagasmg'}>Instagram</Link>
                         </Stack>
                     </SimpleGrid>
                 </Flex>
@@ -56,7 +56,7 @@ export default function Footer() {
             <Flex mb={[24, 0]} direction="column" px="4" py="4" w="full" alignItems="center" bg="blue.100"  >
                 <Flex w="full" justifyContent="center" maxW="7xl" >
                     <Text fontSize="10px" px="4" textAlign="justify" color="blue.600">
-                        O Mais Vagas ES é uma plataforma capixaba que reúne diariamente as melhores vagas de emprego em todo o Espírito Santo. Fique por dentro das últimas vagas de emprego ofertadas e encontre facilmente as melhores oportunidades na sua região. Como um dos principais sites de busca de emprego do estado, somos a sua fonte confiável para visualizar as vagas mais recentes nas empresas, proporcionando uma vantagem exclusiva por possuímos diversas parcerias com empresas.
+                        O Mais Vagas MG é uma plataforma mineira que reúne diariamente as melhores vagas de emprego em toda Minas Gerais. Fique por dentro das últimas vagas de emprego ofertadas e encontre facilmente as melhores oportunidades na sua região. Como um dos principais sites de busca de emprego do estado, somos a sua fonte confiável para visualizar as vagas mais recentes nas empresas, proporcionando uma vantagem exclusiva por possuímos diversas parcerias com empresas.
                     </Text>
                 </Flex>
             </Flex>

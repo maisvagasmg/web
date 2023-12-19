@@ -4,7 +4,7 @@ import { PageTitle } from "../components/PageTitle/PageTitle";
 export default function Empresas() {
     return (
         <>
-            <PageTitle excludePrefix>Empresas - Mais Vagas ES</PageTitle>
+            <PageTitle excludePrefix>Empresas - Mais Vagas MG</PageTitle>
             <Companies />
         </>
     );

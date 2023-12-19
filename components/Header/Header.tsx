@@ -1,10 +1,16 @@
 import { ChevronDownIcon, ChevronRightIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Box, Button, Collapse, Flex, Icon, IconButton, Popover, PopoverContent, PopoverTrigger, Stack, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import axios from 'axios';
 import { Logo } from "../Logo/Logo";
-import { WhatsappLogo } from '@phosphor-icons/react';
 
 export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure()
+
+    async function WhatsAppLink(): Promise<string> {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/WhatsApp/?&filter[url][_eq]=true`)
+        //@ts-ignore
+        return response?.data?.data[0]?.link;
+    }
 
     return (
         <Flex
@@ -52,7 +58,10 @@ export default function WithSubnavigation() {
                         fontWeight={600}
                         color={'white'}
                         colorScheme="green"
-                        href={'#'}
+                        onClick={async () => {
+                            const link = await WhatsAppLink();
+                            window.location.href = link;
+                        }}
                     >
                         Grupo de vagas no WhatsApp
                     </Button>
@@ -63,7 +72,7 @@ export default function WithSubnavigation() {
                         fontWeight={600}
                         color={'white'}
                         bg={'pink.400'}
-                        href={'#'}
+                        href={'https://wa.me/5527992830038'}
                         _hover={{
                             bg: 'pink.300',
                         }}>

@@ -9,7 +9,7 @@ export default function Cities() {
                 <Flex direction="column" bg="gray.50" py={4} borderBottomLeftRadius={24} borderBottomRightRadius={24} borderWidth={1} borderColor="gray.200">
                     <Flex direction={'column'} py={4} px={6} justifyContent="center"  >
                         <Flex justifyContent={'center'} gap={4} direction={'column'}>
-                            <Text fontWeight={'bold'} fontSize='xl' textAlign={'center'} color="blue.700">Cidades (38)
+                            <Text fontWeight={'bold'} fontSize='xl' textAlign={'center'} color="blue.700">Cidades
                             </Text>
                             <Text fontSize={['sm', 'sm', 'md']} textAlign={'center'} color="gray.500">Descubra vagas próximas a você! Escolha uma cidade abaixo e explore as vagas disponíveis exclusivas para essa localidade.
                             </Text>
@@ -19,7 +19,9 @@ export default function Cities() {
             </Flex>
 
             <Flex direction="column" w="full" px={6} maxW="7xl" mx="auto">
-                <Text py={4} fontWeight="bold" fontSize="lg" color="gray.700"> V (23)</Text>
+                <Text py={8} textAlign={'center'} fontWeight="bold" fontSize="lg" color="gray.700"> Este recurso estará disponível em breve</Text>
+
+                {/* <Text py={4} fontWeight="bold" fontSize="lg" color="gray.700"> V (23)</Text>
                 <Flex justifyContent="center" gap={4} >
                     <SimpleGrid w="full" spacing={4} columns={[1, 1, 2]} >
                         <Card variant="outline" boxShadow="sm" rounded={6} overflow="hidden" >
@@ -71,7 +73,7 @@ export default function Cities() {
                             </Flex>
                         </Card>
                     </SimpleGrid>
-                </Flex>
+                </Flex> */}
             </Flex>
         </>
     )

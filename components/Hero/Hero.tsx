@@ -26,7 +26,7 @@ export const Hero = () => {
                             </Text>{' '}
                         </Heading>
                         <Text fontSize={{ base: 'sm', lg: 'lg' }} color={'gray.600'}>
-                            O jeito mais rápido, fácil e eficaz de você achar seu emprego no ES!
+                            O jeito mais rápido, fácil e eficaz de você achar seu emprego no MG!
                         </Text>
                     </Stack>
                     <Flex  >

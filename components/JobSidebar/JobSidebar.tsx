@@ -21,7 +21,7 @@ export default function JobSidebar() {
                         <CardBody>
                             <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }} className="mobile-card">
                                 <Flex w="full">
-                                    <Image justifyContent={"center"} minH="full" src="https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2022/01/Timenow.png" boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
+                                    <Image justifyContent={"center"} minH="full" src="https://i0.wp.com/maisvagasmg.com.br/wp-content/uploads/2022/01/Timenow.png" boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
                                     <Flex direction="column" px={4} py={2} justifyContent="space-between" w="full">
                                         <Text minH={11} fontWeight={'semibold'} fontSize='xs' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 1, WebkitBoxOrient: 'vertical' }}>Analista de Recursos Humanos - Recrutamento e Seleção
                                         </Text>
@@ -49,7 +49,7 @@ export default function JobSidebar() {
                         <CardBody>
                             <Card height="full" variant="outline" boxShadow="sm" w="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} pl="0" pt="0" pb="0" overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }} className="mobile-card">
                                 <Flex w="full">
-                                    <Image justifyContent={"center"} minH="full" src="https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2022/06/Lince-Humanizacao.png" boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
+                                    <Image justifyContent={"center"} minH="full" src="https://i0.wp.com/maisvagasmg.com.br/wp-content/uploads/2022/06/Lince-Humanizacao.png" boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} objectFit="cover" />
                                     <Flex direction="column" px={4} py={2} justifyContent="space-between" w="full">
                                         <Text minH={11} fontWeight={'semibold'} fontSize='xs' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>Assistente de Departamento Pessoal - Folha de Pagamento
                                         </Text>
@@ -73,7 +73,7 @@ export default function JobSidebar() {
 
 
 {/* <Flex justifyContent={'center'} direction={'column'} alignItems={'center'} >
-                                <Image boxSize={20} objectFit='cover' rounded="lg" src='https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2021/11/Kuruma-Veiculos.png?w=680&ssl=1' mb={4} />
+                                <Image boxSize={20} objectFit='cover' rounded="lg" src='https://i0.wp.com/maisvagasmg.com.br/wp-content/uploads/2021/11/Kuruma-Veiculos.png?w=680&ssl=1' mb={4} />
                                 <Text fontWeight={'bold'} size='md' color="blue.800">Analista de Departamento Pessoal</Text>
                                 <Text fontWeight={'medium'} size='sm' color="gray.500">São Domingos do Norte</Text>
                             </Flex> */}

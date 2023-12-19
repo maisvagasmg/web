@@ -7,7 +7,7 @@ export default function Company() {
                 <Flex px={2} justifyContent="center" direction={{ base: 'column', md: 'row' }} bg="gray.50" py={4} borderBottomLeftRadius={24} borderBottomRightRadius={24} borderWidth={1} borderColor="gray.200">
                     <Flex justifyContent={'center'} direction={'column'} gap={4} py={4} >
                         <Flex justifyContent={'center'} direction={'column'} alignItems={'center'}  >
-                            <Image boxSize={24} objectFit='cover' rounded="lg" src='https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2021/11/Kuruma-Veiculos.png' mb={4} />
+                            <Image boxSize={24} objectFit='cover' rounded="lg" src='https://i0.wp.com/maisvagasmg.com.br/wp-content/uploads/2021/11/Kuruma-Veiculos.png' mb={4} />
                             <Text fontWeight={'bold'} fontSize='lg' color="blue.800">Kurumá Veículos</Text>
                         </Flex>
                     </Flex>
@@ -20,7 +20,7 @@ export default function Company() {
                     <SimpleGrid columns={[1, 1, 2]} spacing={4} maxW="6xl" mx="auto">
                         <Card variant="outline" boxShadow="sm" rounded={8} overflow="hidden">
                             <Flex w="full">
-                                <Image justifyContent={"center"} minH="full" src='https://i0.wp.com/maisvagases.com.br/wp-content/uploads/2021/11/Kuruma-Veiculos.png' objectFit={"cover"} boxSize={24} borderTopLeftRadius={8} borderBottomLeftRadius={8} />
+                                <Image justifyContent={"center"} minH="full" src='https://i0.wp.com/maisvagasmg.com.br/wp-content/uploads/2021/11/Kuruma-Veiculos.png' objectFit={"cover"} boxSize={24} borderTopLeftRadius={8} borderBottomLeftRadius={8} />
                                 <Flex direction="column" px={4} py={4} justifyContent="center">
                                     <Text fontWeight={'semibold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>Analista de Recursos Humanos - Recrutamento e Seleção </Text>
                                     <Grid templateColumns="1fr min-content" columnGap={2} alignItems="center">

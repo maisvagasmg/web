@@ -4,7 +4,7 @@ import { PageTitle } from "../components/PageTitle/PageTitle";
 export default function Cidades() {
     return (
         <>
-            <PageTitle excludePrefix>Cidades - Mais Vagas ES</PageTitle>
+            <PageTitle excludePrefix>Cidades - Mais Vagas MG</PageTitle>
             <Cities />
         </>
     );
