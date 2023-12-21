@@ -35,9 +35,9 @@ export default function Jobheader({ data }) {
                 </Flex>
 
                 <Flex direction={['row', 'row', 'column']} px={4} py={4} gap={4} mt={4} alignItems={'center'} maxW="7xl" mx="auto" w="full" flexWrap={['wrap', 'wrap', 'nowrap']} >
-                    <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+                    <Grid templateColumns='repeat(3, 1fr)' gap={6} >
                         <GridItem w='100%' colSpan={[3, 3, 2]} >
-                            <Card boxShadow="sm" rounded={6} overflow="hidden" variant="outline">
+                            <Card boxShadow="base" rounded={6} overflow="hidden" variant="outline" mb={32}>
                                 <CardHeader>
                                     <Text fontWeight="bold" fontSize="xl" color="gray.800" textAlign="center"> Informações da Vaga</Text>
                                 </CardHeader>
@@ -67,7 +67,7 @@ export default function Jobheader({ data }) {
                                     </Text>
                                 </CardBody>
                                 <Divider w="full"></Divider>
-                                <CardFooter>
+                                <CardFooter >
                                     {data?.candidatura == "link" && <SendCVLink link={data?.url} inscricoes={data?.inscricoes} id={data?.id} />}
                                     {data?.candidatura == "mail" && <SendCVMail />}
                                     {data?.candidatura == "whatsapp" && <SendCVWhatsApp whatsapp={data?.whatsapp?.whatsapp} cargo={data?.cargos} inscricoes={data?.inscricoes} id={data?.id} />}
