@@ -3,8 +3,8 @@ import { Flex, Heading, Stack, Text, Image, useBreakpointValue } from '@chakra-u
 export const Hero = () => {
     return (
         <>
-            <Flex w="full" bg="blue.50" justifyContent="center" alignItems="center" >
-                <Flex py={4} px={8} align={'center'} justifyContent={'space-between'} bg='blue.50' w='full' maxW="7xl"  >
+            <Flex w="full" bg="red.50" justifyContent="center" alignItems="center" borderBottomWidth={1} borderColor="red.100">
+                <Flex py={4} px={8} align={'center'} justifyContent={'space-between'} w='full' maxW="7xl"  >
                     <Stack spacing={6} w={'full'} maxW={'lg'}>
                         <Heading fontSize={{ base: 'xl', md: '3xl', lg: '4xl' }}>
                             <Text as={'span'} position={'relative'}
@@ -21,7 +21,7 @@ export const Hero = () => {
                                 Sua vaga está aqui!
                             </Text>
                             <br />{' '}
-                            <Text color={'blue.400'} as={'span'}>
+                            <Text color={'red.500'} as={'span'}>
                                 É mais vagas pra você.
                             </Text>{' '}
                         </Heading>

@@ -11,7 +11,7 @@ export const SendCVLink = ({ link, inscricoes, id }) => {
             inscricoes: inscricoes + 1,
         })
             .then(() => {
-                window.open(link);
+                window.location.href = link;
             })
             .catch((error) => {
                 console.error('Erro ao atualizar o número de inscrições:', error);

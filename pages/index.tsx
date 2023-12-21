@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import { Hero } from "../components/Hero/Hero";
 import JobCard from "../components/JobCard/JobCard";
+import { PageTitle } from "@/components/PageTitle/PageTitle";
 
 export default function Index() {
   <link rel="icon" href="/favicon.ico" />
@@ -27,6 +28,7 @@ export default function Index() {
 
   return (
     <>
+      <PageTitle excludePrefix >Mais Vagas MG</PageTitle>
       <Hero />
       <HomeCards />
       <Flex w="full" justifyContent="center">

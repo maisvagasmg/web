@@ -57,7 +57,7 @@ export default function WithSubnavigation() {
                         fontSize={'sm'}
                         fontWeight={600}
                         color={'white'}
-                        colorScheme="green"
+                        colorScheme="whatsapp"
                         onClick={async () => {
                             const link = await WhatsAppLink();
                             window.location.href = link;
@@ -71,10 +71,10 @@ export default function WithSubnavigation() {
                         fontSize={'sm'}
                         fontWeight={600}
                         color={'white'}
-                        bg={'pink.400'}
+                        bg={'red.500'}
                         href={'https://wa.me/5527992830038'}
                         _hover={{
-                            bg: 'pink.300',
+                            bg: 'red.600',
                         }}>
                         Enviar vaga
                     </Button>
