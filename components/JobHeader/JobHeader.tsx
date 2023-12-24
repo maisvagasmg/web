@@ -1,15 +1,18 @@
-import { Card, CardBody, CardFooter, CardHeader, Divider, Flex, Grid, GridItem, Image, Box, SimpleGrid, Text } from '@chakra-ui/react';
+import { Card, CardBody, Button, CardFooter, CardHeader, Divider, Flex, Grid, GridItem, Image, Box, SimpleGrid, Text } from '@chakra-ui/react';
 import JobInfo from '../JobInfo/JobInfo';
 import JobSidebar from '../JobSidebar/JobSidebar';
 import { SendCVLink } from '../SendCV/SendCVLink';
 import { SendCVMail } from '../SendCV/SendCVMail';
 import { SendCVWhatsApp } from '../SendCV/SendCVWhatsApp';
+import Telegram from '../Telegram/Telegram';
+
 
 export default function Jobheader({ data }) {
     return (
         <>
             <Flex w="full" justifyContent="center" direction="column" >
-                <Flex px={4} justifyContent="center" direction={{ base: 'column', md: 'row' }} bg="gray.50" py={6} borderWidth={1} borderColor="gray.200" borderBottomLeftRadius={24} borderBottomRightRadius={24} w="full">
+                <Telegram />
+                <Flex px={4} justifyContent="center" direction={{ base: 'column', md: 'row' }} bg="gray.50" py={6} borderWidth={1} borderColor="gray.200" borderBottomLeftRadius={8} borderBottomRightRadius={8} w="full">
                     <SimpleGrid columns={[1, 1, 2]} spacing={[4, 4, 8]} maxW="7xl" mx="auto" px={[0, 0, 4]} w="full">
                         <Flex direction={'column'}  >
                             <Flex gap={4} mb={[4, 4, 0]} >
