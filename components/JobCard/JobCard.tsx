@@ -1,4 +1,4 @@
-import { Badge, Card, Flex, Grid, Image, SimpleGrid, Text, Link, CardFooter, Divider, Icon } from '@chakra-ui/react';
+import { Badge, Card, Flex, Grid, Image, SimpleGrid, Text, Link, CardFooter, Divider, Icon, Box } from '@chakra-ui/react';
 import { SuitcaseSimple, Wheelchair } from '@phosphor-icons/react';
 import React from 'react';
 
@@ -27,8 +27,8 @@ const contractColorSchemes = {
 export const JobCard: React.FC<JobCardProps> = ({ logo, title, company, jobType, city, slug, quantidade, pcd }) => {
     return (
         <>
-            <Flex w="full" justifyContent="center">
-                <Flex px={{ base: 4, md: 8 }} w='6xl' justifyContent="center" direction={{ base: 'column', md: 'row' }} minW="full">
+            <Flex w="full" justifyContent="center" >
+                <Flex w='6xl' justifyContent="center" direction={{ base: 'column', md: 'row' }} minW="full">
                     <Link href={`/vaga/${slug}`} target="_blank" textDecoration={"none"} _hover={{ textDecoration: "none" }} minW="full">
                         <Card height="full" variant="outline" boxShadow="sm" width="full" minW="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }} className="mobile-card" >
                             <Flex w="full" minW="full">
@@ -83,21 +83,24 @@ const Jobs: React.FC<JobProps> = ({ jobData }) => {
     }
 
     return (
-        <SimpleGrid columns={[1, 1, 2]} spacing={4} maxW="7xl" mx="auto" py={8} >
-            {jobData.map((job, index) => (
-                <JobCard
-                    key={index}
-                    logo={job.company.Logo.filename_disk}
-                    title={job.cargos}
-                    company={job.company.Empresa}
-                    jobType={job.Contract}
-                    city={getCities(job)}
-                    slug={job.slug}
-                    quantidade={job.quantidade}
-                    pcd={job.pcd}
-                />
-            ))}
-        </SimpleGrid>
+        <Flex w="full" justifyContent="center" maxW="7xl" mx="auto" py={8} px={[4, 4, 8]}>
+            <SimpleGrid columns={[1, 1, 2]} spacing={4} >
+                {jobData.map((job, index) => (
+                    <JobCard
+                        key={index}
+                        logo={job.company.Logo.filename_disk}
+                        title={job.cargos}
+                        company={job.company.Empresa}
+                        jobType={job.Contract}
+                        city={getCities(job)}
+                        slug={job.slug}
+                        quantidade={job.quantidade}
+                        pcd={job.pcd}
+                    />
+                ))}
+            </SimpleGrid>
+        </Flex>
+
     );
 };
 
