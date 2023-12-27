@@ -20,7 +20,7 @@ export default function Companies() {
             <Flex direction="column" w="full" px={6} mx="auto" maxW="7xl">
                 <Text py={8} textAlign={'center'} fontWeight="bold" fontSize="lg" color="gray.700"> Este recurso estará disponível em breve</Text>
 
-                {/* <Text py={4} fontWeight="bold" fontSize="lg" color="gray.700"> A (99)</Text>
+                <Text py={4} fontWeight="bold" fontSize="lg" color="gray.700"> A (99)</Text>
                 <SimpleGrid columns={[1, 1, 2]} spacing={4} >
                     <Card variant="outline" boxShadow="sm" rounded={8} w="full" overflow="hidden">
                         <Flex maxH={20} w="full" >
@@ -49,7 +49,7 @@ export default function Companies() {
                             </Flex>
                         </Flex>
                     </Card>
-                </SimpleGrid> */}
+                </SimpleGrid>
             </Flex>
         </>
     )
