@@ -18,7 +18,8 @@ export default function Jobheader({ data }) {
                             <Flex gap={4} mb={[4, 4, 0]} >
                                 <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.company?.Logo?.filename_disk}format=webp&quality=75`} />
                                 <Flex direction={'column'} justifyContent={'space-between'}>
-                                    <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.cargos}</Text>
+                                    <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.cargos}
+                                    </Text>
                                     <Flex direction={'column'}>
                                         <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                                             {data?.cidade.map((tag, index) => (<Text as='span' key={tag.id}>
@@ -46,18 +47,18 @@ export default function Jobheader({ data }) {
                                 </CardHeader>
                                 <Divider w="full"></Divider>
                                 <CardBody>
-                                    <Text >
+                                    <Text>
                                         A empresa <strong>{data?.company?.Empresa}</strong> está com nova vaga em aberto para a cidade de&nbsp;
                                         <strong>
                                             {data?.cidade.map((tag, index) => (
                                                 <Text as='span' key={tag.id}>
-                                                    {index > 0 && index === data?.cidade.length - 1 && data?.cidade.length > 2 && <strong>&nbsp;e&nbsp;</strong>}
-                                                    {index > 0 && index !== data?.cidade.length - 1 && <strong>&nbsp;</strong>}
+                                                    <Text fontSize="sm" display={index > 0 ? 'inline' : 'none'} as='span'
+                                                        dangerouslySetInnerHTML={{ __html: index === data?.cidade.length - 1 ? "&nbsp;e&nbsp;" : ",&nbsp;" }} />
                                                     {tag.Cidades_id?.cidade}
                                                 </Text>
                                             ))}
                                         </strong>
-                                        &nbsp;para o cargo de <strong>{data?.cargos}<br /> </strong>
+                                        &nbsp;para o cargo de <strong>{data?.cargos}.<br /></strong>
 
                                         Confira logo mais abaixo todos os detalhes dessa vaga de emprego e como se candidatar a essa oportunidade.<br />
                                         Nós do Mais Vagas ES te desejamos boa sorte neste processo seletivo! Caso seja contratado, não esqueça de compartilhar essa conquista conosco através de um de nossos canais de comunicação. <br />

@@ -54,7 +54,7 @@ export default function Index() {
             <Text fontWeight="bold" fontSize="xl" >Vagas recentes</Text>
             <Text fontWeight="light" fontSize="sm">{vagasHoje} vagas adicionadas hoje</Text>
           </Flex>
-          {/* <Button size="sm" variant="outline" rightIcon={<Icon as={ArrowUpRight} />}>Todas as vagas</Button> */}
+          <Button as={'a'} href={'/vagas'} size="sm" variant="outline" rightIcon={<Icon as={ArrowUpRight} />}>Todas as vagas</Button>
         </Flex>
       </Flex>
       <JobCard jobData={vaga} />
