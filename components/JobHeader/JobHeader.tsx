@@ -1,13 +1,13 @@
-import { Card, CardBody, Button, CardFooter, CardHeader, Divider, Flex, Grid, GridItem, Image, Box, SimpleGrid, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter, CardHeader, Divider, Flex, Grid, GridItem, Image, SimpleGrid, Skeleton, SkeletonText, Text } from '@chakra-ui/react';
 import JobInfo from '../JobInfo/JobInfo';
-import JobSidebar from '../JobSidebar/JobSidebar';
 import { SendCVLink } from '../SendCV/SendCVLink';
 import { SendCVMail } from '../SendCV/SendCVMail';
 import { SendCVWhatsApp } from '../SendCV/SendCVWhatsApp';
 import Telegram from '../Telegram/Telegram';
 
 
-export default function Jobheader({ data }) {
+export default function Jobheader({ data, isLoaded }) {
+    isLoaded = false
     return (
         <>
             <Flex w="full" justifyContent="center" direction="column" >
@@ -16,17 +16,22 @@ export default function Jobheader({ data }) {
                     <SimpleGrid columns={[1, 1, 2]} spacing={[4, 4, 8]} maxW="7xl" mx="auto" px={[0, 0, 4]} w="full">
                         <Flex direction={'column'}  >
                             <Flex gap={4} mb={[4, 4, 0]} >
-                                <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.companies?.Logo?.filename_disk}format=webp&quality=75`} />
+                                <Skeleton isLoaded={isLoaded}>
+                                    <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.companies?.Logo?.filename_disk}format=webp&quality=75`} />
+                                </Skeleton>
                                 <Flex direction={'column'} justifyContent={'space-between'}>
-                                    <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.cargo.Cargo}
-                                    </Text>
+                                    <SkeletonText noOfLines={1} skeletonHeight={18} isLoaded={isLoaded}>
+                                        <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                                            {data?.cargo.Cargo}
+                                        </Text>
+                                    </SkeletonText>
                                     <Flex direction={'column'}>
                                         <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
-                                            {data?.cidade.map((tag, index) => (<Text as='span' key={tag.id}>
+                                            {data?.cidade.map((tag, index) => (<Skeleton as='span' isLoaded={isLoaded} key={tag.id}>
                                                 <Text fontSize="sm" display={index > 0 ? 'inline' : 'none'} as='span'
                                                     dangerouslySetInnerHTML={{ __html: index === data?.cidade.length - 1 ? "&nbsp;e&nbsp;" : ",&nbsp;" }} />
                                                 {tag.Cidades_id?.cidade}
-                                            </Text>
+                                            </Skeleton>
                                             ))}
                                         </Text>
                                         <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.companies?.Empresa}</Text>
@@ -47,7 +52,7 @@ export default function Jobheader({ data }) {
                                 </CardHeader>
                                 <Divider w="full"></Divider>
                                 <CardBody>
-                                    <Text>
+                                    <SkeletonText noOfLines={15} isLoaded={isLoaded}>
                                         A empresa <strong>{data?.companies?.Empresa}</strong> está com nova vaga em aberto para a cidade de&nbsp;
                                         <strong>
                                             {data?.cidade.map((tag, index) => (
@@ -68,7 +73,7 @@ export default function Jobheader({ data }) {
                                                 Para se candidatar a vaga, clique no botão VERDE abaixo com o nome <strong>↪ ME CANDIDATAR A ESSA VAGA ↩</strong> logo abaixo. Preencha suas informações com nome, email e WhatsApp e anexe seu currículo.
                                             </Text>
                                         </Flex>
-                                    </Text>
+                                    </SkeletonText>
                                 </CardBody>
                                 <Divider w="full"></Divider>
                                 <CardFooter >
