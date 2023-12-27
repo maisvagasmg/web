@@ -53,7 +53,7 @@ export default function Footer() {
                     </SimpleGrid>
                 </Flex>
             </Flex>
-            <Flex mb={[24, 0]} direction="column" px="4" py="4" w="full" alignItems="center" bg="red.50"  >
+            <Flex direction="column" px="4" py="4" w="full" alignItems="center" bg="red.50"  >
                 <Flex w="full" justifyContent="center" maxW="7xl" >
                     <Text fontSize="10px" px="4" textAlign="justify" color="red.600">
                         O Mais Vagas MG é uma plataforma mineira que reúne diariamente as melhores vagas de emprego em toda Minas Gerais. Fique por dentro das últimas vagas de emprego ofertadas e encontre facilmente as melhores oportunidades na sua região. Como um dos principais sites de busca de emprego do estado, somos a sua fonte confiável para visualizar as vagas mais recentes nas empresas, proporcionando uma vantagem exclusiva por possuímos diversas parcerias com empresas.

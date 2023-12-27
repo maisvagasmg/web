@@ -9,7 +9,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <Flex direction='column' h="100%" textColor='gray.700'>
         <Flex h="100%" position='relative'>
           <Flex overflowY='auto' w="full" >
-            <Flex flexDir="column" overflowY='auto' w="full">
+            <Flex flexDir="column" overflowY='auto' w="full" mb={[24,24,0]}>
               <Header />
               <WhatsApp />
               {children}
