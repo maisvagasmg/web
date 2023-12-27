@@ -31,7 +31,7 @@ export default function Companies() {
             .map((empresa, index) => (
                 <Card key={index} variant="outline" boxShadow="sm" rounded={8} w="full" overflow="hidden">
                     <Flex maxH={20} w="full" >
-                        <Image justifyContent={"center"} minH="full" src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${empresa.Logo.filename_disk}`} objectFit={"cover"} boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} />
+                        <Image justifyContent={"center"} minH="full" src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${empresa?.Logo?.filename_disk}`} objectFit={"cover"} boxSize={20} borderTopLeftRadius={8} borderBottomLeftRadius={8} />
                         <Flex w="full" px={4} py={4} justifyContent="space-between">
                             <HStack alignItems="center" w="full">
                                 <Text fontSize="md" fontWeight="semibold">{empresa.Empresa}</Text>

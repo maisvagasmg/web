@@ -88,14 +88,14 @@ const Jobs: React.FC<JobProps> = ({ jobData }) => {
                 {jobData.map((job, index) => (
                     <JobCard
                         key={index}
-                        logo={job.companies.Logo.filename_disk}
-                        title={job.cargo.Cargo}
-                        company={job.companies.Empresa}
-                        jobType={job.Contract}
+                        logo={job.companies?.Logo?.filename_disk}
+                        title={job?.cargo?.Cargo}
+                        company={job?.companies?.Empresa}
+                        jobType={job?.Contract}
                         city={getCities(job)}
-                        slug={job.slug}
-                        quantidade={job.quantidade}
-                        pcd={job.pcd}
+                        slug={job?.slug}
+                        quantidade={job?.quantidade}
+                        pcd={job?.pcd}
                     />
                 ))}
             </SimpleGrid>
