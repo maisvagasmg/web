@@ -7,7 +7,7 @@ import Telegram from '../Telegram/Telegram';
 
 
 export default function Jobheader({ data, isLoaded }) {
-    isLoaded = false
+    //isLoaded = false
     return (
         <>
             <Flex w="full" justifyContent="center" direction="column" >
