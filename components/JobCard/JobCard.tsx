@@ -32,7 +32,7 @@ export const JobCard: React.FC<JobCardProps> = ({ logo, title, company, jobType,
                     <Link href={`/vaga/${slug}`} target="_blank" textDecoration={"none"} _hover={{ textDecoration: "none" }} minW="full">
                         <Card height="full" variant="outline" boxShadow="sm" width="full" minW="full" rounded={8} borderTopLeftRadius={8} borderBottomLeftRadius={8} overflow="hidden" transition="transform 0.3s" _hover={{ transform: "scale(1.05)" }} className="mobile-card" >
                             <Flex w="full" minW="full">
-                                <Image justifyContent={"center"} minH="full" src={process.env.NEXT_PUBLIC_IMAGE_URL + logo} boxSize={28} borderTopLeftRadius={8} borderBottomLeftRadius={0} objectFit="cover" />
+                                <Image justifyContent={"center"} minH="full" src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${logo}`} boxSize={28} borderTopLeftRadius={8} borderBottomLeftRadius={0} objectFit="cover" />
                                 <Flex direction="column" px={4} py={4} justifyContent="space-between" w="full">
                                     <Text minH={11} fontWeight={'semibold'} fontSize='sm' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{title}</Text>
                                     <Flex direction="column" w="full">
@@ -88,9 +88,9 @@ const Jobs: React.FC<JobProps> = ({ jobData }) => {
                 {jobData.map((job, index) => (
                     <JobCard
                         key={index}
-                        logo={job.company.Logo.filename_disk}
-                        title={job.cargos}
-                        company={job.company.Empresa}
+                        logo={job.companies.Logo.filename_disk}
+                        title={job.cargo.Cargo}
+                        company={job.companies.Empresa}
                         jobType={job.Contract}
                         city={getCities(job)}
                         slug={job.slug}

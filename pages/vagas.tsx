@@ -10,7 +10,7 @@ export default function Vagas() {
     const [vaga, setVaga] = useState<any[]>([])
 
     async function loadJobs() {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Vagas/?fields=slug,cargos,company.Empresa,Contract,cidade.Cidades_id.cidade,pcd,quantidade,company.Logo.filename_disk&status=published&sort=-date_updated`)
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Vagas/?fields=slug,cargo.Cargo,companies.Empresa,Contract,cidade.Cidades_id.cidade,pcd,quantidade,companies.Logo.filename_disk&status=published&sort=-date_updated`)
         //@ts-ignore
         setVaga(response?.data?.data)
     }

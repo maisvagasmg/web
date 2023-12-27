@@ -16,9 +16,9 @@ export default function Jobheader({ data }) {
                     <SimpleGrid columns={[1, 1, 2]} spacing={[4, 4, 8]} maxW="7xl" mx="auto" px={[0, 0, 4]} w="full">
                         <Flex direction={'column'}  >
                             <Flex gap={4} mb={[4, 4, 0]} >
-                                <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.company?.Logo?.filename_disk}format=webp&quality=75`} />
+                                <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.companies?.Logo?.filename_disk}format=webp&quality=75`} />
                                 <Flex direction={'column'} justifyContent={'space-between'}>
-                                    <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.cargos}
+                                    <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.cargo.Cargo}
                                     </Text>
                                     <Flex direction={'column'}>
                                         <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
@@ -29,7 +29,7 @@ export default function Jobheader({ data }) {
                                             </Text>
                                             ))}
                                         </Text>
-                                        <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.company?.Empresa}</Text>
+                                        <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.companies?.Empresa}</Text>
                                     </Flex>
                                 </Flex>
                             </Flex>
@@ -48,7 +48,7 @@ export default function Jobheader({ data }) {
                                 <Divider w="full"></Divider>
                                 <CardBody>
                                     <Text>
-                                        A empresa <strong>{data?.company?.Empresa}</strong> está com nova vaga em aberto para a cidade de&nbsp;
+                                        A empresa <strong>{data?.companies?.Empresa}</strong> está com nova vaga em aberto para a cidade de&nbsp;
                                         <strong>
                                             {data?.cidade.map((tag, index) => (
                                                 <Text as='span' key={tag.id}>
@@ -58,7 +58,7 @@ export default function Jobheader({ data }) {
                                                 </Text>
                                             ))}
                                         </strong>
-                                        &nbsp;para o cargo de <strong>{data?.cargos}.<br /></strong>
+                                        &nbsp;para o cargo de <strong>{data?.cargo.Cargo}.<br /></strong>
 
                                         Confira logo mais abaixo todos os detalhes dessa vaga de emprego e como se candidatar a essa oportunidade.<br />
                                         Nós do Mais Vagas ES te desejamos boa sorte neste processo seletivo! Caso seja contratado, não esqueça de compartilhar essa conquista conosco através de um de nossos canais de comunicação. <br />

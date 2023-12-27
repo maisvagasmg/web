@@ -22,7 +22,7 @@ export default function Index() {
 
   return (
     <>
-      <PageTitle excludePrefix>{vaga?.cargos}</PageTitle>
+      <PageTitle excludePrefix>{vaga?.cargo.Cargo}</PageTitle>
       <JobHeader data={vaga} />
     </>
   );

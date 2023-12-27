@@ -1,7 +1,50 @@
 import { Card, Flex, Hide, HStack, Icon, Show, SimpleGrid, Spacer, Text } from '@chakra-ui/react';
 import { Briefcase } from "@phosphor-icons/react";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export default function Positions() {
+    const [cargos, setCargos] = useState([]);
+
+    const groupedCargos = cargos.reduce((acc, position) => {
+        const initial = position.Cargo.charAt(0).toUpperCase();
+
+        if (!acc[initial]) {
+            acc[initial] = [];
+        }
+
+        acc[initial].push(position);
+
+        return acc;
+    }, {});
+
+    const sortedKeys = Object.keys(groupedCargos).sort();
+
+    useEffect(() => {
+        axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Cargos/?limit=9999999&fields=Cargo,slug,Vagas`).then((res) => {
+            setCargos(res.data.data)
+        })
+    }, [])
+
+    const renderCargoWithVagas = (cargos) => { 
+        return cargos
+            .filter((c) => c.Vagas.length > 0)
+            .map((cargo, index) => (
+                <Card variant="outline" boxShadow="sm" rounded={6} overflow="hidden" >
+                    <Flex  >
+                        <Flex w="full" px={4} py={4} justifyContent="space-between"  >
+                            <HStack alignItems="center" w="full">
+                                <Text fontSize="md" fontWeight="semibold">{cargo.Cargo}</Text>
+                                <Spacer />
+                                <Icon boxSize={6} color='gray.600' as={Briefcase} />
+                                <Text fontWeight="semibold" fontSize="md" color="gray.600">{cargo.Vagas.length}</Text>
+                            </HStack>
+                        </Flex>
+                    </Flex>
+                </Card>
+            ));
+    };
+
     return (
         <>
 
@@ -19,61 +62,28 @@ export default function Positions() {
             </Flex>
 
             <Flex direction="column" w="full" px={6} maxW="7xl" mx="auto">
-                <Text py={8} textAlign={'center'} fontWeight="bold" fontSize="lg" color="gray.700"> Este recurso estará disponível em breve</Text>
 
-                {/* <Text py={4} fontWeight="bold" fontSize="lg" color="gray.700"> A (23)</Text>
-                <Flex justifyContent="center" gap={4} >
-                    <SimpleGrid w="full" spacing={4} columns={[1, 1, 2]} >
-                        <Card variant="outline" boxShadow="sm" rounded={6} overflow="hidden" >
-                            <Flex  >
-                                <Flex w="full" px={4} py={4} justifyContent="space-between"  >
-                                    <HStack alignItems="center" w="full">
-                                        <Text fontSize="md" fontWeight="semibold">Gestor de Portfólio e Desenvolvimento de Produtos Cerâmicos</Text>
-                                        <Spacer />
-                                        <Icon boxSize={6} color='gray.600' as={Briefcase} />
-                                        <Text fontWeight="semibold" fontSize="md" color="gray.600">02</Text>
-                                    </HStack>
-                                </Flex>
-                            </Flex>
-                        </Card>
-                        <Card variant="outline" boxShadow="sm" rounded={6} overflow="hidden">
-                            <Flex  >
-                                <Flex w="full" px={4} py={4} justifyContent="space-between"  >
-                                    <HStack alignItems="center" w="full">
-                                        <Text fontSize="md" fontWeight="semibold">Auxiliar de Recursos Humanos - Recrutamento e Seleção</Text>
-                                        <Spacer />
-                                        <Icon boxSize={6} color='gray.600' as={Briefcase} />
-                                        <Text fontWeight="semibold" fontSize="md" color="gray.600">13</Text>
-                                    </HStack>
-                                </Flex>
-                            </Flex>
-                        </Card>
-                        <Card variant="outline" boxShadow="sm" rounded={6}  >
-                            <Flex  >
-                                <Flex w="full" px={4} py={4} justifyContent="space-between"  >
-                                    <HStack alignItems="center" w="full">
-                                        <Text fontSize="md" fontWeight="semibold">Gestor de Portfólio e Desenvolvimento de Produtos Cerâmicos</Text>
-                                        <Spacer />
-                                        <Icon boxSize={6} color='gray.600' as={Briefcase} />
-                                        <Text fontWeight="semibold" fontSize="md" color="gray.600">02</Text>
-                                    </HStack>
-                                </Flex>
-                            </Flex>
-                        </Card>
-                        <Card variant="outline" boxShadow="sm" rounded={6}  >
-                            <Flex  >
-                                <Flex w="full" px={4} py={4} justifyContent="space-between"  >
-                                    <HStack alignItems="center" w="full">
-                                        <Text fontSize="md" fontWeight="semibold">Auxiliar de Recursos Humanos - Recrutamento e Seleção</Text>
-                                        <Spacer />
-                                        <Icon boxSize={6} color='gray.600' as={Briefcase} />
-                                        <Text fontWeight="semibold" fontSize="md" color="gray.600">13</Text>
-                                    </HStack>
-                                </Flex>
-                            </Flex>
-                        </Card>
-                    </SimpleGrid>
-                </Flex> */}
+                <div>
+                    {sortedKeys.map((initial) => {
+                        const cargoComVagas = groupedCargos[initial].filter((cargo) => cargo.Vagas.length > 0);
+
+                        // Renderiza a seção apenas se houver empresas com vagas
+                        if (cargoComVagas.length > 0) {
+                            return (
+                                <div key={initial}>
+                                    <Text py={4} fontWeight="bold" fontSize="lg" color="gray.700">
+                                        {initial}
+                                    </Text>
+                                    <SimpleGrid columns={[1, 1, 2]} spacing={4}>
+                                        {renderCargoWithVagas(cargoComVagas)}
+                                    </SimpleGrid>
+                                </div>
+                            );
+                        }
+                        // Se não houver empresas com vagas, retorna null para não renderizar a seção
+                        return null;
+                    })}
+                </div>
             </Flex>
         </>
     )

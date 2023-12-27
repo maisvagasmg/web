@@ -32,7 +32,7 @@ export default function Index() {
   }, [vaga]);
 
   async function loadJobs() {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Vagas/?fields=slug,cargos,company.Empresa,Contract,cidade.Cidades_id.cidade,company.Logo.filename_disk,date_updated,quantidade,pcd&sort=-date_updated`)
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/items/Vagas/?fields=slug,cargo.Cargo,companies.Empresa,Contract,cidade.Cidades_id.cidade,companies.Logo.filename_disk,date_updated,quantidade,pcd&sort=-date_updated`)
     //@ts-ignore
     setVaga(response?.data?.data)
   }
