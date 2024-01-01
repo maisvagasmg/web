@@ -1,4 +1,4 @@
-import { Badge, Box, Card, CardBody, Flex, Icon, Text } from '@chakra-ui/react';
+import { Badge, Box, Skeleton, Card, CardBody, Flex, Icon, Text } from '@chakra-ui/react';
 import { Stack, CalendarBlank, Coins, LinkedinLogo, Wheelchair, Briefcase } from "@phosphor-icons/react";
 
 const contractColorSchemes = {
@@ -9,7 +9,7 @@ const contractColorSchemes = {
     temporario: 'red',
 };
 
-export default function JobInfo({ data }) {
+export default function JobInfo({ data, isLoaded }) {
     return (
         <>
             <Flex w="full" justifyContent="center" >
@@ -24,9 +24,11 @@ export default function JobInfo({ data }) {
                                             <Text fontWeight={'semibold'}> Tipo </Text>
                                         </Flex>
                                         <Box>
-                                            <Badge variant="subtle" colorScheme={contractColorSchemes[data?.Contract]}>
-                                                {data?.Contract}
-                                            </Badge>
+                                            <Skeleton isLoaded={isLoaded}>
+                                                <Badge variant="subtle" colorScheme={contractColorSchemes[data?.Contract]}>
+                                                    {data?.Contract}
+                                                </Badge>
+                                            </Skeleton>
                                         </Box>
                                     </Flex>
 
@@ -35,14 +37,16 @@ export default function JobInfo({ data }) {
                                             <Icon boxSize={6} color='blue.500' as={Coins} />
                                             <Text fontWeight={'semibold'}>Salário</Text>
                                         </Flex>
-                                        <Text>
-                                            {data?.salary
-                                                ? new Intl.NumberFormat('pt-BR', {
-                                                    style: 'currency',
-                                                    currency: 'BRL',
-                                                }).format(data?.salary)
-                                                : 'Não informado'}
-                                        </Text>
+                                        <Skeleton isLoaded={isLoaded}>
+                                            <Text>
+                                                {data?.salary
+                                                    ? new Intl.NumberFormat('pt-BR', {
+                                                        style: 'currency',
+                                                        currency: 'BRL',
+                                                    }).format(data?.salary)
+                                                    : 'Não informado'}
+                                            </Text>
+                                        </Skeleton>
                                     </Flex>
 
                                     <Flex justifyContent="space-between" >
@@ -50,11 +54,13 @@ export default function JobInfo({ data }) {
                                             <Icon boxSize={6} color='red.500' as={CalendarBlank} />
                                             <Text fontWeight={'semibold'}>Publicado</Text>
                                         </Flex>
-                                        <Text>
-                                            {data?.date_updated || data?.date_created
-                                                ? new Date(data?.date_updated || data?.date_created).toLocaleDateString('pt-BR')
-                                                : 'Não informado'}
-                                        </Text>
+                                        <Skeleton isLoaded={isLoaded}>
+                                            <Text>
+                                                {data?.date_updated || data?.date_created
+                                                    ? new Date(data?.date_updated || data?.date_created).toLocaleDateString('pt-BR')
+                                                    : 'Não informado'}
+                                            </Text>
+                                        </Skeleton>
                                     </Flex>
                                 </Flex>
 
@@ -64,7 +70,9 @@ export default function JobInfo({ data }) {
                                             <Icon boxSize={6} color='purple.500' as={Briefcase} />
                                             <Text fontWeight={'semibold'}>Quantidade</Text>
                                         </Flex>
-                                        <Text >{data?.quantidade ? data?.quantidade.toString().padStart(2, '0') : '01'}</Text>
+                                        <Skeleton isLoaded={isLoaded}>
+                                            <Text>{data?.quantidade ? data?.quantidade.toString().padStart(2, '0') : '01'}</Text>
+                                        </Skeleton>
                                     </Flex>
 
                                     <Flex justifyContent="space-between" >
@@ -72,13 +80,15 @@ export default function JobInfo({ data }) {
                                             <Icon boxSize={6} color='teal.500' as={Wheelchair} />
                                             <Text fontWeight={'semibold'}>PCD</Text>
                                         </Flex>
-                                        <Text>
-                                            {data?.pcd === 'nao-aceita'
-                                                ? 'Não aceita'
-                                                : data?.pcd === 'nao-informado'
-                                                    ? 'Não informado'
-                                                    : data?.pcd && data?.pcd.charAt(0).toUpperCase() + data?.pcd.slice(1)}
-                                        </Text>
+                                        <Skeleton isLoaded={isLoaded}>
+                                            <Text>
+                                                {data?.pcd === 'nao-aceita'
+                                                    ? 'Não aceita'
+                                                    : data?.pcd === 'nao-informado'
+                                                        ? 'Não informado'
+                                                        : data?.pcd && data?.pcd.charAt(0).toUpperCase() + data?.pcd.slice(1)}
+                                            </Text>
+                                        </Skeleton>
                                     </Flex>
 
                                     {data?.url?.includes("https://www.linkedin.com/jobs/view/") && (
@@ -87,7 +97,9 @@ export default function JobInfo({ data }) {
                                                 <Icon boxSize={6} color='blue.500' as={LinkedinLogo} />
                                                 <Text fontWeight={'semibold'}>Candidatura</Text>
                                             </Flex>
-                                            <Text>via LinkedIn</Text>
+                                            <Skeleton isLoaded={isLoaded}>
+                                                <Text>via LinkedIn</Text>
+                                            </Skeleton>
                                         </Flex>
                                     )}
                                 </Flex>

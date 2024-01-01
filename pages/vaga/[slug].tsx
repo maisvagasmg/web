@@ -1,8 +1,8 @@
+import axios from "axios";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import JobHeader from "../../components/JobHeader/JobHeader";
 import { PageTitle } from "../../components/PageTitle/PageTitle";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 
 export default function Index() {
   const { slug } = useRouter().query;

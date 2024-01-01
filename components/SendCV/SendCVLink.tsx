@@ -20,7 +20,7 @@ export const SendCVLink = ({ link, inscricoes, id }) => {
 
     return (
         <>
-            <Flex onClick={onOpen} w="full"  ><Button colorScheme="green" w="full">Me candidatar a essa vaga</Button></Flex>
+            <Flex onClick={onOpen} w="full"  ><Button colorScheme="blue" w="full">Me candidatar a essa vaga</Button></Flex>
             <Drawer isOpen={isOpen} onClose={onClose}
                 //@ts-ignore
                 placement={DrawerPosition} size={['md', 'md', 'lg']}>

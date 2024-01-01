@@ -6,9 +6,7 @@ import { SendCVWhatsApp } from '../SendCV/SendCVWhatsApp';
 import Telegram from '../Telegram/Telegram';
 import JobSidebar from '../JobSidebar/JobSidebar';
 
-
 export default function Jobheader({ data, isLoaded }) {
-    //isLoaded = false
     return (
         <>
             <Flex w="full" justifyContent="center" direction="column" >
@@ -21,11 +19,11 @@ export default function Jobheader({ data, isLoaded }) {
                                     <Image boxSize={[24, 24, 32]} objectFit='cover' rounded="lg" src={`${process.env.NEXT_PUBLIC_URL}/assets/${data?.companies?.Logo?.filename_disk}format=webp&quality=75`} />
                                 </Skeleton>
                                 <Flex direction={'column'} justifyContent={'space-between'}>
-                                    <SkeletonText noOfLines={1} skeletonHeight={18} isLoaded={isLoaded}>
+                                    <Skeleton noOfLines={1} isLoaded={isLoaded}>
                                         <Text fontWeight={'bold'} fontSize='md' color="blue.800" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                                             {data?.cargo.Cargo}
                                         </Text>
-                                    </SkeletonText>
+                                    </Skeleton>
                                     <Flex direction={'column'}>
                                         <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                                             {data?.cidade.map((tag, index) => (<Skeleton as='span' isLoaded={isLoaded} key={tag.id}>
@@ -35,12 +33,14 @@ export default function Jobheader({ data, isLoaded }) {
                                             </Skeleton>
                                             ))}
                                         </Text>
-                                        <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.companies?.Empresa}</Text>
+                                        <Skeleton isLoaded={isLoaded}>
+                                            <Text fontWeight={'medium'} fontSize={['xs', 'xs', 'sm']} color="gray.500" wordBreak={'break-all'} display={'-webkit-box'} textOverflow={'ellipsis'} overflow={'hidden'} style={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{data?.companies?.Empresa}</Text>
+                                        </Skeleton>
                                     </Flex>
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <JobInfo data={data} />
+                        <JobInfo data={data} isLoaded={isLoaded} />
                     </SimpleGrid>
                 </Flex>
 
@@ -53,7 +53,7 @@ export default function Jobheader({ data, isLoaded }) {
                                 </CardHeader>
                                 <Divider w="full"></Divider>
                                 <CardBody>
-                                    <SkeletonText noOfLines={15} isLoaded={isLoaded}>
+                                    <SkeletonText noOfLines={15} isLoaded={isLoaded} skeletonHeight={18}>
                                         <Text as='p' >
                                             A empresa <strong>{data?.companies?.Empresa}</strong> está com nova vaga em aberto para a cidade de&nbsp;
                                             <Text as='strong' style={{ lineBreak: 'anywhere' }}>
@@ -75,7 +75,7 @@ export default function Jobheader({ data, isLoaded }) {
                                         <Text dangerouslySetInnerHTML={{ __html: data?.descricao }} className="description"></Text>
                                         <Flex bg="blue.50" w="full" p={4} rounded={6} borderWidth={1} borderColor="blue.100">
                                             <Text color="blue.600" justifyContent="justify" fontSize="sm"  >
-                                                Para se candidatar a vaga, clique no botão VERDE abaixo com o nome <strong>↪ ME CANDIDATAR A ESSA VAGA ↩</strong> logo abaixo. Preencha suas informações com nome, email e WhatsApp e anexe seu currículo.
+                                                Para se candidatar a vaga, clique no botão AZUL abaixo com o nome <strong>↪ ME CANDIDATAR A ESSA VAGA ↩</strong> logo abaixo. Preencha suas informações com nome, email e WhatsApp e anexe seu currículo.
                                             </Text>
                                         </Flex>
                                     </SkeletonText>
